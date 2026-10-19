@@ -1,0 +1,1 @@
+{"version":3,"file":"BunFileSystem.d.ts","sourceRoot":"","sources":["../src/BunFileSystem.ts"],"names":[],"mappings":"AAUA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,mBAAmB,CAAA;AACnD,OAAO,KAAK,KAAK,KAAK,MAAM,cAAc,CAAA;AAE1C;;;;;GAKG;AACH,eAAO,MAAM,KAAK,EAAE,KAAK,CAAC,KAAK,CAAC,UAAU,EAAE,KAAK,EAAE,KAAK,CAAwB,CAAA"}
