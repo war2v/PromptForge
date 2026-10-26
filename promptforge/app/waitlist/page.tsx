@@ -1,15 +1,22 @@
+import { WaitlistForm } from "@/components/forms/waitlist";
 import { ModeToggle } from "@/components/providers/ThemeToggle";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { ArrowDownAZ, ArrowDownIcon, ArrowRightIcon, LayoutDashboard, Menu, SquareCode } from "lucide-react";
-import Form from 'next/form'
+import { ArrowDownAZ,  LayoutDashboard, Menu, SquareCode } from "lucide-react";
+
 import Link from "next/link";
 
+
+
+
 export default function WaitlistPage() {
+
+
+    
+
   return (
     <div className="px-15 pb-50 h-screen" suppressHydrationWarning>
       <header className="pt-15 pb-8 uppercase border-b">
@@ -75,7 +82,7 @@ export default function WaitlistPage() {
             <Card className="p-2 rounded-sm text-muted-foreground">
               <div className="flex flex-col gap-2">
                 <h4>03 / Calibration</h4>
-                <h5 className="text-sm text-green-700">CalibrateEngineering Direction</h5>
+                <h5 className="text-sm text-green-700">Calibrate Engineering Direction</h5>
               </div>
             </Card>
             <Card className="p-2 rounded-sm text-muted-foreground">
@@ -144,25 +151,9 @@ export default function WaitlistPage() {
         </Card>
       </section>
 
-    <section className="pb-15  border-b">
-        <Form action={""} className="flex flex-col border bg-accent/50 p-5 rounded-lg gap-5">
-            <h1 className="text-xl font-semibold">Sign Up For Early Access!</h1>
-            <h3 className="text-muted-foreground text-sm">Join our waitlist of AI Engineers and Enthusiasts building structured prompts.</h3>
-          <div className="flex flex-col ">
-            <Label htmlFor="email" className="text-muted-foreground text-sm">Email Address</Label>
-            <Input className="p-4 mb-5 rounded" id="email" placeholder="developer@domain.com"/>
-            <Label htmlFor="role" className="text-muted-foreground text-sm">Select your role</Label>
-            <select className="p-2 bg-input/50 rounded text-muted-foreground text-sm border" id="role">
-              <option value="">Select Role</option>
-              <option value="ai-developer">AI Developer</option>
-              <option value="engineer">Engineer</option>
-              <option value="product-manager">Product Manager</option>
-              <option value="prompt-architect">Prompt Architect</option>
-            </select>
-          </div>
-          <Button variant="outline" className="rounded my-3 p-5 dark:text-black">Request Access <ArrowRightIcon /></Button>
-        </Form>
-    </section>
+
+      <WaitlistForm />
+    
 
       <section id="footer" className="flex  items-end py-15 text-xs">
         <div className="flex flex-col gap-2 justify-center w-full">
