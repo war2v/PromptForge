@@ -1,6 +1,6 @@
 "use client"
 
-import { joinWaitlist } from "@/app/actions/waitlist";
+import { joinWaitlist } from "@/app/_actions/waitlist";
 import { Form } from "@base-ui/react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
