@@ -50,24 +50,13 @@ export interface PromptVersion {
 }
 
 export interface PromptProject {
-  id: string;
-  title: string;
-  originalIdea: string;
-  interpretation: string;
-  clarificationAnswers: Record<string, string>;
-  primaryStrategy: PromptStrategy;
-  secondaryStrategies: PromptStrategy[];
-  role: string;
-  targetModel: TargetModel;
-  tone: string[];
-  responseLength: string;
-  outputFormat: string;
-  constraints: string[];
-  context: string;
-  successCriteria: string;
-  variants: PromptVariant[];
-  selectedVariantId: string | null;
-  versions: PromptVersion[];
-  createdAt: string;
-  updatedAt: string;
+  id: string; // uuid
+  created_at: string; // timestamp with time zone
+  original_idea: string | null;
+  task_specification: Record<string, any> | null; // jsonb
+  calibration_specification: Record<string, any> | null; // jsonb
+  current_stage: string | null;
+  status: string | null;
+  updated_at: string | null;
+  user_id: string; // uuid
 }
