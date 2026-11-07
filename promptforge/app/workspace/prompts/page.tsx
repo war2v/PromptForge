@@ -21,8 +21,8 @@ export default function PromptsPage() {
     } = usePrompt();
 
     const onSubmit = async (projectData: PromptProject) => {
-        const {data, error} = await saveData(projectData);
-        router.push(`/workspace/${id}`)
+        //const {data, error} = await saveData(projectData);
+        //router.push(`/workspace/${id}`)
     }
 
    
