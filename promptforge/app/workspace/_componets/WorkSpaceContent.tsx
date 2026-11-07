@@ -1,13 +1,15 @@
 import { ProjectContainer } from "@/components/project/ProjectContainer";
 import { supabase } from "@/lib/supabase";
 
-interface PromptPageContentProps {
+interface WorkspacePageContentProps {
   params: Promise<{ id: string }>;
+  children: React.ReactNode
 }
 
 export default async function PromptPageContent({
   params,
-}: PromptPageContentProps) {
+  children
+}: WorkspacePageContentProps) {
   const fakePromptData = {
     id: "123",
     current_stage: "initial_idea",
@@ -36,9 +38,7 @@ export default async function PromptPageContent({
 
   return (
     <ProjectContainer className="flex w-full h-screen text-neutral-700 bg-neutral-100 dark:bg-primary dark:text-white">
-      <div className="flex flex-col w-full h-full  bg-green-300 dark:bg-primary dark:text-white">
-        content for prompt
-      </div>
+      {children}
     </ProjectContainer>
   );
 }

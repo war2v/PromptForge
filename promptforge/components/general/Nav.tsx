@@ -33,7 +33,7 @@ export const Nav = () => {
     ]
 
     return (
-        <nav className="p-5 w-1/3 h-screen dark:bg-primary dark:dark:">
+        <nav className="p-5 w-1/3 h-full dark:bg-primary ">
             <div id="Icon" className="flex items-center gap-4">
                 <Code2 className="bg-red-400 rounded-lg" size={50}/>
                 <div>

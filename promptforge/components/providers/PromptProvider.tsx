@@ -11,8 +11,19 @@ interface PromptContextType {
     calibrationSpecification: Record<string, any> | null;
     createdAt: string | null;
     updatedAt: string | null;
+    original_idea: string | null;
 
-    changePromptData: (data: PromptProject) => void;
+    setPromptId: (id: string | null) => void;
+    setCurrentStage: (newStage: string | null) => void;
+    setStatus: (status:string | null) => void;
+    setUserId: (userId: string | null) => void;
+    setOriginalIdea: (original_idea: string | null) => void;
+    setTaskSpecification: (taskSpecification: Record<string, any> | null) => void;
+    setCalibrationSpecification: (calibrationSpecification: Record<string, any> | null) => void;
+    setCreatedAt: (createdAt: string | null) => void;
+    setUpdatedAt: (updatedAt: string | null) => void;
+    allData: () => PromptProject
+    
 }
 
 const PromptContext = createContext<PromptContextType | undefined>(undefined);
@@ -38,19 +49,26 @@ export function PromptProvider({ children }: PromptProviderProps) {
     const [userId, setUserId] = useState<string | null>(null);
     const [taskSpecification, setTaskSpecification] = useState<Record<string, any> | null>(null);
     const [calibrationSpecification, setCalibrationSpecification] = useState<Record<string, any> | null>(null);
+    const [original_idea, setOriginalIdea] = useState<string | null>(null);
     const [createdAt, setCreatedAt] = useState<string | null>(null);
     const [updatedAt, setUpdatedAt] = useState<string | null>(null);
 
-    const changePromptData = (data: PromptProject) => {
-        setPromptId(data.id);
-        setCurrentStage(data.current_stage);
-        setStatus(data.status);
-        setUserId(data.user_id);
-        setTaskSpecification(data.task_specification);
-        setCalibrationSpecification(data.calibration_specification);
-        setCreatedAt(data.created_at);
-        setUpdatedAt(data.updated_at);
-    };
+    const allData = () => {
+        const projectData: PromptProject = {
+            id: promptId,
+            current_stage: currentStage,
+            status: status,
+            user_id: userId ? userId : "a2be8005-ffb4-49e3-b967-417f76fd0bd3",
+            task_specification: taskSpecification,
+            calibration_specification: calibrationSpecification,
+            original_idea: original_idea,
+            created_at: createdAt ? createdAt : "Sat 07 Nov 2026 15:49:39 GMT-0600",
+            updated_at: updatedAt,
+        }
+
+        return projectData
+    }
+   
 
     return (
         <PromptContext.Provider
@@ -63,7 +81,17 @@ export function PromptProvider({ children }: PromptProviderProps) {
                 calibrationSpecification,
                 createdAt,
                 updatedAt,
-                changePromptData,
+                original_idea,
+                setPromptId,
+                setCurrentStage,
+                setStatus,
+                setUserId,
+                setTaskSpecification,
+                setCalibrationSpecification,
+                setCreatedAt,
+                setUpdatedAt,
+                setOriginalIdea,
+                allData
             }}
         >
             {children}

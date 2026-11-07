@@ -1,6 +1,4 @@
-import { ProjectContainer } from "@/components/project/ProjectContainer";
-import { Suspense } from "react";
-import PromptPageContent from "./_componets/PromptPageContent";
+
 
 
 interface PromptPageProps {
@@ -9,11 +7,9 @@ interface PromptPageProps {
 
 export default async function PromptPage({ params }: PromptPageProps) {
   return (
-    <div className="flex flex-col w-full h-screen">
+    <div className="p-5 flex flex-col w-full h-screen">
       <div className="flex">
-        <Suspense>
-          <PromptPageContent params={params} />
-        </Suspense>
+        prompt {(await params).id}
       </div>
     </div>
   );

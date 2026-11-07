@@ -50,8 +50,8 @@ export interface PromptVersion {
 }
 
 export interface PromptProject {
-  id: string; // uuid
-  created_at: string; // timestamp with time zone
+  id: string | null; // uuid
+  created_at: string | null; // timestamp with time zone
   original_idea: string | null;
   task_specification: Record<string, any> | null; // jsonb
   calibration_specification: Record<string, any> | null; // jsonb
