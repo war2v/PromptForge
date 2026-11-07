@@ -41,6 +41,10 @@ PromptForge is being designed around a more deliberate engineering process:
 
 The central principle is that **a prompt should be engineered against a specification, not merely generated from a description**.
 
+![Alt Text](readme/image.png)
+![Alt Text](readme/demo.png)
+![Alt Text](readme/demo3.png)
+
 ### Long-Term Product Direction
 
 The intended evolution of PromptForge is organized around three capabilities:
